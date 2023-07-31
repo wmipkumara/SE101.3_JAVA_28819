@@ -1,0 +1,45 @@
+//Q2
+
+public class PlayerController {
+
+    private String direction = "None";
+
+    public void moveUp() {
+        direction = "Up";
+        System.out.println("Player is moving up");
+    }
+
+    public void moveDown() {
+        direction = "Down";
+        System.out.println("Player is moving down");
+    }
+
+    public void moveLeft() {
+        direction = "Left";
+        System.out.println("Player is moving left");
+    }
+
+    public void moveRight() {
+        direction = "Right";
+        System.out.println("Player is moving right");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        PlayerController playerController = new PlayerController();
+
+        // Move the player up
+        playerController.moveUp();
+
+        // Move the player down
+        playerController.moveDown();
+
+        // Move the player left
+        playerController.moveLeft();
+
+        // Move the player right
+        playerController.moveRight();
+    }
+}
