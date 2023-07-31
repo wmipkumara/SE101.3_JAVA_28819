@@ -1,0 +1,14 @@
+//Exercise 01:
+1. There is no difference between declaring the variable with or without the public, static, and final keywords. This is because interface variables are always public, static, and final by default.
+2. There is also no difference between declaring the abstract method with or without the abstract keyword. This is because all methods in an interface are abstract by default.
+3. Here is the code for the class that implements the interface.
+
+public class InterfaceImplemented implements MyFirstInterface {
+  @Override
+  public void display() {
+    // This will not compile because x is a static variable in the interface
+    // and cannot be changed in the implementing class.
+    // x = 10;
+    System.out.println("The value of x is " + x);
+  }
+}
