@@ -1,0 +1,67 @@
+package com.mycompany.javap1;
+public class JavaP1 {
+
+//1
+    
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        
+        //2
+        System.out.println("Nimsara");
+        System.out.println("Managment Information System");
+        
+        //3
+        for (int i = 0; i <= 4; i++) {
+            System.out.println("Executing Loop " + i);
+        
+        //4
+         int[] numbers = {10, 20, 30, 40, 50};
+        for (int x : numbers) {
+            if (x == 30) {
+                break;
+            }
+            System.out.print(x);
+            System.out.print("\n");
+        }
+        System.out.println("I'm out of the loop now");
+        
+        //5.1
+        char grade = 'A';
+
+        switch (grade) {
+            case 'A':
+                System.out.println("Excellent!");
+                break;
+            case 'D':
+                System.out.println("You passed");
+                break;
+            case 'F':
+                System.out.println("Better try again");
+                break;
+            default:
+                System.out.println("Invalid grade");
+        }
+
+        System.out.println("Your grade is " + grade);
+        
+        //5.2
+        char grade = 'A';
+        if (grade == 'A') 
+        {
+            System.out.println("Excellent!");
+        } else if (grade == 'D') {
+            System.out.println("You passed");
+        } else if (grade == 'F') {
+            System.out.println("Better try again");
+        } else {
+            System.out.println("Invalid grade");
+        }
+
+        System.out.println("Your grade is " + grade);
+        
+        //6
+        //10,20,30,40,50
+        //James,Larry,Tom,Lacy
+        }
+    }
+}
