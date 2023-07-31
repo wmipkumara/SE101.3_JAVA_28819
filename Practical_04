@@ -1,0 +1,85 @@
+//Exercise 01:
+
+class Employee {
+    private int empID;
+    private String empName;
+    private String empDesignation;
+
+    // Getters
+    public int getEmpID() {
+        return empID;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public String getEmpDesignation() {
+        return empDesignation;
+    }
+
+    // Setters
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public void setEmpDesignation(String empDesignation) {
+        this.empDesignation = empDesignation;
+    }
+}
+
+public class TestEmployee {
+    public static void main(String[] args) {
+        // Creating objects for Mr. Bogdan and Ms. Bird
+        Employee mrBogdan = new Employee();
+        Employee msBird = new Employee();
+
+        // Setting values using setters
+        mrBogdan.setEmpID(1001);
+        mrBogdan.setEmpName("Bogdan");
+        mrBogdan.setEmpDesignation("Software Engineer");
+
+        msBird.setEmpID(1002);
+        msBird.setEmpName("Bird");
+        msBird.setEmpDesignation("Data Analyst");
+
+        // Printing the values using getters
+        System.out.println("Mr. Bogdan's details:");
+        System.out.println("Employee ID: " + mrBogdan.getEmpID());
+        System.out.println("Employee Name: " + mrBogdan.getEmpName());
+        System.out.println("Employee Designation: " + mrBogdan.getEmpDesignation());
+
+        System.out.println("\nMs. Bird's details:");
+        System.out.println("Employee ID: " + msBird.getEmpID());
+        System.out.println("Employee Name: " + msBird.getEmpName());
+        System.out.println("Employee Designation: " + msBird.getEmpDesignation());
+    }
+}
+
+//Exercise 02:
+
+SuperB b = new SuperB();
+b.setIt(2);      // Set x to 2
+b.increase();    // Increment x by 1 (x = 2 + 1 = 3)
+b.triple();      // Triple the value of x (x = 3 * 3 = 9)
+System.out.println(b.returnIt());  // Print the value of x (Output: 9)
+
+SubC c = new SubC();
+c.setIt(2);      // Set x to 2
+c.increase();    // Increment x by 1 (x = 2 + 1 = 3)
+c.triple();      // Overridden method: Triple the value of x (x = 3 + 3 = 6)
+System.out.println(c.returnIt());  // Print the value of x (Output: 6)
+
+//Exercise 04:
+
+Animal a = new Animal();  // Create an instance of Animal
+Mammal m = new Mammal();  // Create an instance of Mammal
+Dog d = new Dog();        // Create an instance of Dog
+
+System.out.println(m instanceof Animal); // Check if m is an instance of Animal (Output: true)
+System.out.println(d instanceof Mammal); // Check if d is an instance of Mammal (Output: true)
+System.out.println(d instanceof Animal); // Check if d is an instance of Animal (Output: true)
