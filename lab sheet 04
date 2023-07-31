@@ -1,0 +1,73 @@
+//Exercise 01:
+
+class Employee {
+    private int empID;
+    private String empName;
+    private String empDesignation;
+
+    // Constructor to initialize the Employee object
+    public Employee(int empID, String empName, String empDesignation) {
+        this.empID = empID;
+        this.empName = empName;
+        this.empDesignation = empDesignation;
+    }
+
+    // Getter methods
+    public int getEmpID() {
+        return empID;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public String getEmpDesignation() {
+        return empDesignation;
+    }
+
+    // Setter methods
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public void setEmpDesignation(String empDesignation) {
+        this.empDesignation = empDesignation;
+    }
+}
+
+public class TestEmployee {
+    public static void main(String[] args) {
+        // Create two Employee objects
+        Employee mrBogdan = new Employee(101, "Mr. Bogdan", "Software Engineer");
+        Employee msBird = new Employee(102, "Ms. Bird", "Project Manager");
+
+        // Use setters to set values for Mr. Bogdan and Ms. Bird
+        mrBogdan.setEmpID(101);
+        mrBogdan.setEmpName("Mr. Bogdan");
+        mrBogdan.setEmpDesignation("Software Engineer");
+
+        msBird.setEmpID(102);
+        msBird.setEmpName("Ms. Bird");
+        msBird.setEmpDesignation("Project Manager");
+
+        // Use getters to retrieve and print the values for Mr. Bogdan and Ms. Bird
+        System.out.println("Employee ID of Mr. Bogdan: " + mrBogdan.getEmpID());
+        System.out.println("Employee Name of Mr. Bogdan: " + mrBogdan.getEmpName());
+        System.out.println("Employee Designation of Mr. Bogdan: " + mrBogdan.getEmpDesignation());
+
+        System.out.println("\nEmployee ID of Ms. Bird: " + msBird.getEmpID());
+        System.out.println("Employee Name of Ms. Bird: " + msBird.getEmpName());
+        System.out.println("Employee Designation of Ms. Bird: " + msBird.getEmpDesignation());
+    }
+}
+
+
+//Exercise 02:
+
+Output 
+9
+6
