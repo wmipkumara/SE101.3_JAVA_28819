@@ -1,0 +1,71 @@
+//Part 01
+// Item class
+class Item {
+    // Protected instance variables
+    protected int location;
+    protected String description;
+
+    // Constructor
+    public Item(int location, String description) {
+        this.location = location;
+        this.description = description;
+    }
+
+    // Getter and setter for location
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
+
+    // Getter and setter for description
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+// Monster class, subclass of Item
+class Monster extends Item {
+    // Constructor calling the superclass constructor
+    public Monster(int location, String description) {
+        super(location, description);
+    }
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        // Creating an instance of the Item class
+        Item item = new Item(1, "Some item description");
+        System.out.println("Item description: " + item.getDescription());
+
+        // Creating an instance of the Monster class
+        Monster monster = new Monster(2, "Some monster description");
+        System.out.println("Monster description: " + monster.getDescription());
+    }
+}
+
+//Part 02
+1) b.Super
+2) b.Private
+3) b.Packages
+4) c.import pkg.*
+5) c.charAt()
+6) d.length()
+
+//Part 03
+1) Real-world objects contain attributes and behaviors.
+2) A software object's state is stored in instance variables.
+3) A software object's behavior is exposed through methods.
+4) Hiding internal data from the outside world and accessing it only through publicly exposed methods is known as data encapsulation.
+5) A blueprint for a software object is called a class.
+6) Common behavior can be defined in a base class and inherited into a derived class using the extends keyword.
+7) A collection of methods with no implementation is called an interface.
+8) A namespace that organizes classes and interfaces by functionality is called a package.
+9) The term API stands for Application Programming Interface.
