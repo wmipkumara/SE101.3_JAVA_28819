@@ -1,0 +1,104 @@
+//01
+
+import java.sql.*;
+
+public class CreateEmployeeTable {
+
+    public static void main(String[] args) throws SQLException {
+        // Create a connection to the database
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "root", "password");
+
+        // Create a statement
+        Statement statement = connection.createStatement();
+
+        // Create the table
+        String sql = "CREATE TABLE Employee (
+            Name VARCHAR(255) NOT NULL,
+            ID INT NOT NULL,
+            Age INT NOT NULL,
+            Gender CHAR(1) NOT NULL,
+            DepartmentNo INT NOT NULL,
+            PRIMARY KEY (ID)
+        );";
+
+        statement.execute(sql);
+
+        // Close the connection
+        connection.close();
+    }
+}
+
+
+//02
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.sql.*;
+
+public class EmployeeEntryForm extends JFrame {
+
+    private JTextField nameField;
+    private JTextField idField;
+    private JTextField ageField;
+    private JTextField genderField;
+    private JTextField departmentNoField;
+    private JButton submitButton;
+
+    public EmployeeEntryForm() {
+        super("Employee Entry Form");
+
+        // Create the GUI components
+        nameField = new JTextField(20);
+        idField = new JTextField(20);
+        ageField = new JTextField(20);
+        genderField = new JTextField(20);
+        departmentNoField = new JTextField(20);
+        submitButton = new JButton("Submit");
+
+        // Add the GUI components to the frame
+        Container container = getContentPane();
+        container.setLayout(new FlowLayout());
+        container.add(new JLabel("Name:"));
+        container.add(nameField);
+        container.add(new JLabel("ID:"));
+        container.add(idField);
+        container.add(new JLabel("Age:"));
+        container.add(ageField);
+        container.add(new JLabel("Gender:"));
+        container.add(genderField);
+        container.add(new JLabel("Department No:"));
+        container.add(departmentNoField);
+        container.add(submitButton);
+
+        // Register a listener for the submit button
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Get the data from the text fields
+                String name = nameField.getText();
+                int id = Integer.parseInt(idField.getText());
+                int age = Integer.parseInt(ageField.getText());
+                char gender = genderField.getText().charAt(0);
+                int departmentNo = Integer.parseInt(departmentNoField.getText());
+
+                // Insert the data into the database
+                try {
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "root", "password");
+                    Statement statement = connection.createStatement();
+                    String sql = "INSERT INTO Employee (Name, ID, Age, Gender, DepartmentNo) VALUES ('" + name + "', " + id + ", " + age + ", '" + gender + "', " + departmentNo + ")";
+                    statement.executeUpdate(sql);
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+            }
+        });
+
+        // Set the window size and visibility
+        setSize(300, 200);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new EmployeeEntryForm();
+    }
+}
